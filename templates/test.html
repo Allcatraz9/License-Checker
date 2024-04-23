@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+{{ js_code | safe }}
+<!-- particles.js container -->
+<div id="particles-js"></div> <!-- stats - count particles -->
+<div class="count-particles"> <span class="js-count-particles"></span> </div>
+<div class="container">
+
+    <div class="row justify-content-center align-items-center" style="height: 80vh;">
+
+        <div class="col-md-7 col-lg-5 px-lg-2 col-xl-4 px-xl-0 px-xxl-3 ">
+            <form method="POST" class="w-100 rounded-3 p-4 border " action="/upload" enctype="multipart/form-data">
+                <label class="d-block mb-4">
+                    <span class="form-label d-block">JSON File</span>
+                    <input required name="json_file" type="file" class="form-control" accept=".json" />
+                </label>
+
+                <div class="mb-3">
+                    <button type=" submit" class="btn btn-primary px-3 rounded-3">
+                        Upload
+                    </button>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

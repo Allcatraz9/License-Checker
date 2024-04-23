@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='login-style.css') }}">
+</head>
+
+<body>
+
+    <h1 class="heading">Driver License Verification Portal</h1>
+
+    <center>
+        <div class="alert" id="alertMsg"></div>
+        <!-- <h1>Login Page</h1>
+        <form method="POST">
+            <br><br>
+            <input type="name" name = "name" placeholder = "Email">
+            <br>
+            <input type="password" name = "password" placeholder="Password">
+            <br>
+            <input type="submit" name="submit">
+        </form> -->
+        <form method="post" onsubmit="return validateForm()">
+            <div class="ring">
+                <i style="--clr:#00ff0a;"></i>
+                <i style="--clr:#000000;"></i>
+                <!-- <i style="--clr:#ff0057;"></i> -->
+                <i style="--clr:#fffd44;"></i>
+                
+                <div class="login">
+                    <h2>Login</h2>
+                    <div class="inputBx">
+                        <input type="text" placeholder="Username" name="name" id="username">
+                    </div>
+                    <div class="inputBx">
+                        <input type="password" placeholder="Password" name="password" id="password">
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Sign in" name="submit">
+                    </div>
+                    <div class="links">
+                        <a href="#">Forget Password</a>
+                        <a href="#">Signup</a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </center>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if username and password are empty
+            if (username.trim() === "" || password.trim() === "") {
+                showAlert("Please enter both username and password.");
+                return false; // Prevent form submission
+            }
+
+            // Check if username and password are incorrect (you can replace this with your validation logic)
+            // if (username !== "correctUsername" || password !== "correctPassword") {
+            //     showAlert("Incorrect username or password.");
+            //     return false; // Prevent form submission
+            // }
+
+            // Clear any previous alert message
+            document.getElementById("alertMsg").innerText = "";
+            return true; // Allow form submission
+        }
+
+        function showAlert(message) {
+            var alertMsgElement = document.getElementById("alertMsg");
+            alertMsgElement.innerText = message;
+            alertMsgElement.style.display = "block";
+            // Hide the alert after 3 seconds (3000 milliseconds)
+            setTimeout(function () {
+                alertMsgElement.innerText = "";
+                alertMsgElement.style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='home.css') }}">
+    <title>DLC101</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bars"></div>
+    </div>
+    <div class="heading">
+        <h1 style="font-size:1000%;">Group No.6</h1>
+        <br>
+        <h1 style="font-size:500%" ;>Network Security Project</h1>
+        <br>
+        <h1 style="font-size:500%" ;>Driving Licence Verification</h1>
+        <br>
+
+    </div>
+    <footer style="margin-top : 45%;">
+        <h1 style="align-content:center;margin-left:50px;">Under supervision of Sanjay Sahay Sir</h1>
+    </footer>
+
+
+    <nav>
+        <h2>Driver License verification</h2>
+        <div class="close">
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/create">Create</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/test">Upload</a></li>
+         
+        </ul>
+    </nav>
+    
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big ">
+          <svg height="30" width="30">
+            <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+          </svg>
+        </div>
+        
+        <div class="cursor__ball cursor__ball--small">
+          <svg height="10" width="10">
+            <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+          </svg>
+        </div>
+      </div>
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script>const open = document.querySelector('.container');
+        const close = document.querySelector('.close');
+        var tl = gsap.timeline({ defaults: { duration: 1, ease: 'expo.inOut' } });
+        open.addEventListener('click', () => {
+            if (tl.reversed()) {
+                tl.play();
+            } else {
+                tl.to('nav', { right: 0 })
+                    .to('nav', { height: '100vh' }, '-=.1')
+                    .to('nav ul li a', { opacity: 1, pointerEvents: 'all', stagger: .2 }, '-=.8')
+                    .to('.close', { opacity: 1, pointerEvents: 'all' }, "-=.8")
+                    .to('nav h2', { opacity: 1 }, '-=1');
+            }
+        });
+
+        close.addEventListener('click', () => {
+            tl.reverse();
+        });</script>
+</body>
+
+</html>

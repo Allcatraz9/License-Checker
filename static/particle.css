@@ -1,0 +1,91 @@
+
+ body{ margin:0; font:normal 75% "Montserrat", Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; }  #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #000000; background-image: url("blob:https://lordicon.com/2a98c6ef-92b4-4755-ba92-7bcd633200cc"); background-repeat: repeat; background-size: cover; background-position: 50% 50%; } ---- stats.js ---- .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+
+
+/*Custom style for the input file */
+.custom-input-file {
+    border: 2px solid #000; /* Change border color to blue */
+    border-radius: 10px; /* Adjust border-radius */
+    padding: 10px; /* Add padding */
+    outline: none; /* Remove outline */
+}
+
+/* Style for file input when selected */
+.custom-input-file:focus {
+    border-color: #00ffa6 ; /* Change border color on focus */
+
+}
+
+
+
+/* navbar things starts */
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+    background:#00ffa6;
+    
+  }
+
+  header::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  
+  .logo {
+    float: left;
+    padding: 10px 0;
+  }
+  
+  nav {
+    float: right;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 23px;
+  
+    position: relative;
+  }
+  
+  nav a {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  nav a:hover {
+    color: #000;
+  }
+  
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #000;
+  
+    position: absolute;
+    top: 0;
+    width: 0%;
+  
+    transition: all ease-in-out 250ms;
+  }
+  
+  nav a:hover::before {
+    width: 100%;
+  }
+  
+
+
